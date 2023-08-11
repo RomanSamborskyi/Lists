@@ -93,7 +93,6 @@ class ListsViewModel: ObservableObject {
     }
     
     func date(date: Date ) -> String {
-        let curentDate = Date()
         let formater = DateFormatter()
         formater.dateStyle = .short
         formater.timeStyle = .short

@@ -81,7 +81,7 @@ struct ItemsView: View {
                 switch bottonAction {
                 case .addItem:
                     AddItem(vm: vm, title: $title, bottomAction: $bottonAction, entity: entity)
-                        .padding(5)
+                        .padding(.horizontal, 5)
                         .frame(maxWidth: .infinity)
                         .transition(.move(edge: .leading))
                         .background(Material.ultraThinMaterial)
