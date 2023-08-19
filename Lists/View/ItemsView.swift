@@ -112,7 +112,7 @@ struct ItemsView: View {
             vm.deleteItems(item: item)
         }, label: {
             HStack {
-                Text("DELTE")
+                Text("Delete")
                 Image(systemName: "trash")
             }
         })
@@ -124,7 +124,7 @@ struct ItemsView: View {
                 }
             }, label: {
                 HStack {
-                    Text("EDIT")
+                    Text("Edit")
                     Image(systemName: "pencil")
                 }
             })
@@ -156,20 +156,20 @@ struct AddItem: View {
                 .focused($focus)
                 .onSubmit {
                     withAnimation(Animation.spring()) {
-                        if !title.isEmpty {
-                                vm.addItem(title: title, list: entity)
-                            title = ""
-                            focus = true
-                        } else {
                             bottomAction = .addButton
                             focus = false
-                        }
                     }
                 }
             Button(action: {
                 withAnimation(Animation.spring()) {
+                    if !title.isEmpty {
+                            vm.addItem(title: title, list: entity)
+                        title = ""
+                        focus = true
+                    } else {
                         bottomAction = .addButton
                         focus = false
+                    }
                 }
             }, label: {
                 Image(systemName: "checkmark.square.fill")

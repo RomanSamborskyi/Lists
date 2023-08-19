@@ -83,7 +83,7 @@ struct ListsMainView: View {
                 }
             }, label: {
                 HStack {
-                    Text("DELTE")
+                    Text("Delete")
                     Image(systemName: "trash")
                 }
             })
@@ -91,7 +91,7 @@ struct ListsMainView: View {
                 popoverItem = item
             }, label: {
                 HStack {
-                    Text("INFO!")
+                    Text("Info")
                     Image(systemName: "info.square")
                 }
             })
