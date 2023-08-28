@@ -32,6 +32,9 @@ struct ItemsView: View {
                     Text(entity.title ?? "NO TITLE")
                         .padding()
                         .font(.system(size: 35,weight: .bold))
+                        .frame(maxWidth: 185)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
                     Image(systemName: "checkmark.circle")
                         .font(.system(size: 35,weight: .bold))
                 }
