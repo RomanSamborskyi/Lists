@@ -41,6 +41,17 @@ class ListsViewModel: ObservableObject {
         }
     }
  
+    func countItemsInList(list: ListEntity) -> Int? {
+        guard let itemsArray = list.items?.allObjects as? [ItemEnteity] else { return nil }
+        var count = itemsArray.count
+        for oneItem in itemsArray {
+            if oneItem.isChecked {
+                count = count - 1
+            }
+        }
+        return count
+    }
+    
     func addList(title: String) {
         let newList = ListEntity(context: coreData.context)
         newList.title = title
