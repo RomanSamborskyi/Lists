@@ -13,6 +13,7 @@ struct ListsMainView: View {
     @State private var showInfo: Bool = false
     @State private var title: String = ""
     @State private var popoverItem: ListEntity?
+    
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             VStack {
@@ -37,7 +38,7 @@ struct ListsMainView: View {
                                 }
                                 .background(Color("Apperancy").contrast(0.7))
                                 .cornerRadius(10)
-                                if !((list.items?.count ?? 0) == 0){
+                                if !((list.items?.count ?? 0) == 0) {
                                     Text("\(vm.countItemsInList(list: list) ?? 0)")
                                         .padding(10)
                                         .foregroundColor(Color.primary)
